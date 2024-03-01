@@ -1,4 +1,4 @@
-# README for Poll Realtime APP - SOA
+# README for Poll Realtime APP - AOA
 
 ### Frontend (React with Tailwind CSS):
 - **Purpose**: The frontend seems to be the user interface for the polling application.
