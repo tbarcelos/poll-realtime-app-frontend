@@ -1,100 +1,87 @@
-# Search UI Code Challenge
+# README for Poll Realtime APP - SOA
 
-Welcome to the Search UI coding challenge. You will be asked to build a small
-application demonstrating your abilities in React and TypeScript. This challenge
-is targeted towards mid to senior level engineers.
+### Frontend (React with Tailwind CSS):
+- **Purpose**: The frontend seems to be the user interface for the polling application.
+- **Technologies**:
+  - **Framework**: React
+  - **Styling**: Tailwind CSS
+- **Directory Structure**:
+  - `frontend-tailwind/`:
+    - `src/`: Contains the source code for the frontend application.
+      - `components/`: Contains reusable UI components.
+      - `hooks/`: Contains custom React hooks like `AuthContext.tsx`.
+      - `models/`: Contains TypeScript models like `Poll.ts`.
+      - `pages/`: Contains different pages of the application like `Home`, `Login`, `Poll`, etc.
+      - `services/`: Contains API service files for authentication and polls.
+      - `styles/`: Contains global styles like `index.css`.
+      - `utils/`: Contains utility functions like `handleApiError.ts`.
+    - `public/`: Contains static assets like `favicon.ico`, `index.html`.
+    - `package.json`, `package-lock.json`: Contains the frontend dependencies.
+    - `tailwind.config.js`: Tailwind CSS configuration file.
+    - `tsconfig.json`: TypeScript configuration file
 
-## Instructions
 
-1. Clone this repository to your local machine
-2. Create a new private repository on GitHub so others can't copy your work
-3. Push your local clone up to your private repository while preserving history
-4. Create a simple UI that meets the requirements below
-5. Add `jeromedane` as a viewer
+## Technologies and Frameworks Used
+
+This frontend project is built using the following technologies and frameworks:
+
+- **React**: A popular JavaScript library for building user interfaces, particularly single-page applications. It's used for handling the view layer in web and mobile applications.
+- **TypeScript**: A statically typed superset of JavaScript that adds optional types to the language, enhancing code quality and developer productivity.
+- **Tailwind CSS**: A utility-first CSS framework for rapidly building custom user interfaces. It's used for styling the application, ensuring a consistent and responsive design.
+- **React Router**: A standard library for routing in React applications. It's used for managing navigation and rendering the appropriate components based on the current URL.
+
+## Application Architecture
+
+The application follows a modular architecture, with each module encapsulating a specific functionality. The main modules include:
+
+- **Components Module**: Contains reusable UI components that are used across the application.
+- **Hooks Module**: Contains custom React hooks for managing state and side effects, such as authentication and data fetching.
+- **Models Module**: Contains TypeScript models that define the shape of the data used in the application.
+- **Pages Module**: Contains different pages of the application like `Home`, `Login`, `Poll`, etc.
+- **Services Module**: Contains API service files for interacting with the backend, handling authentication and polls.
+- **Styles Module**: Contains global styles and Tailwind CSS configurations.
+- **Utils Module**: Contains utility functions for common tasks, such as error handling and API request utilities.
+
+## Implemented Modules
+
+The frontend project includes the following modules:
+
+- **Authentication Module**: Implements user registration, login, and token-based authentication.
+- **Polls Module**: Allows users to create, update, and delete polls. It also handles voting on polls.
+- **Users Module**: Manages user profiles, including profile creation and updates.
+
+## Running the Project
+
+### Using Yarn or npm
+
+To run the project using Yarn or npm, follow these steps:
+
+1. Ensure Node.js and npm (or Yarn) are installed on your machine.
+2. Navigate to the project root directory.
+3. Install the project dependencies:
+
+```bash
+yarn install
+```
+
+or
+
+```bash
+npm install
+```
+
+4. Start the application:
+
+```bash
+yarn start
+```
+
+or
+
+```bash
+npm start
+```
+
+This will start the development server, and you can view the application by opening [http://localhost:3000](http://localhost:3000) in your browser. The page will reload if you make edits, and you will see the build errors and lint warnings in the console.
+
  
-### Additional Notes
-
-* Use any libraries you like, keeping performance and bundle size in mind
-* Use any UI framework you like, but don't spend too much time here
-* This challenge should only take an hour or two
-
-## Development
-
-Install dependencies using `npm install`.
-
-Run `npm start` to concurrently start the server and UI in development mode.
-
-Open [http://localhost:3000](http://localhost:3000) to view the UI in the 
-browser. The page will reload if you make edits.
-
-### API
-
-* The API server is run on port `3001` while the React UI is run on port `3000`
-* Your UI can call `/api/data?search=[some-query]` directly since 
-the request will be proxied to `http://localhost/api/data?...`
-* You will to need access the API on port `3001` if you're testing it directly 
-  from outside your application (e.g. http://localhost:3001/api/data?search=credit)
-
-
-## The Problem
-
-> As a consumer I want to research financial topics so I can make informed 
-decisions.
-
-## Requirements
-
-```
-Scenario: The application shall provide a search form
-  Given the user visits the application
-  Then a search field is displayed
-  And a button is displayed with the text "Search"
-```
-
-```
-Scenario: The search shall be triggerable by clicking the "Search" button
-  Given the user has entered a search query
-  When the user clicks the "Search" button
-  Then matching search results are displayed
-```
-
-```
-Scenario: The search shall be triggerable by pressing the Enter key
-  Given the user has entered a search query
-  And the input field is currently focused
-  When the user clicks presses the Enter key on their keyboard
-  Then matching search results are displayed
-```
-
-```
-Scenario: A loading state shall be shown while search results are loading
-  Given the user has entered a search query
-  When the user submits their search
-  Then a loading state is shown until the search results are available
-```
-
-```
-Scenario: Search results shall show result title and description
-  Given a user has performed a search
-  When search results are displayed
-  Then the title and description of each search result are displayed
-```
-
-```
-Scenario: Clicking a search result title shall open its URLs in a new tab
-  Given search results are displayed
-  When a user clicks the title of a search result item
-  Then the URL of the search result is opened in a new tab
-```
-
-```
-Scenario: Search results shall be marked as their content type
-  Given search results are displayed
-  Then each result is clearly marked as a video, playlist, or blog post
-```
-
-```
-Scenario: The user shall be informed if no search results match their query
-  Given the user has performed a search
-  When there are no results matching their search query
-  Then the message "There are no results matching your query." is displayed
-```
