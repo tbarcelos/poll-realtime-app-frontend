@@ -1,0 +1,43 @@
+// import { useEffect, useState } from 'react';
+// import { load, Poll } from '../../services/poll';
+// import ListItem from '../PollItem';
+// import List from '../PollList';
+// import { useAuth } from '../../hooks/AuthContext';
+// import { extractErrorMessage } from '../../utils/handleApiError';
+// import Alert from '../Alert';
+
+// const ListPolls: React.FC = () => {
+  // const [data, setData] = useState<Poll[] | null>(null);
+  // const [isLoading, setIsLoading] = useState<boolean>(false);
+  // const [error, setError] = useState('');
+  // const auth = useAuth();
+  // const token = auth.user?.accessToken;
+  // useEffect(() => {
+  //   setIsLoading(true);
+  //   if (token)
+  //     load(token)
+  //       .then(async (response) => {
+  //         setData(response);
+  //       })
+  //       .catch((e) => {
+  //         setError(extractErrorMessage(e));
+  //       })
+  //       .finally(() => {
+  //         setIsLoading(false);
+  //       });
+  // }, []);
+  // // const renderPollResult = () => {
+  // //   if (data?.length === 0) {
+  // //     return 'There are no results';
+  // //   }
+  // //   return data?.map((poll) => <ListItem key={poll.id} poll={poll} />);
+  // // };
+  // return (
+  //   <>
+  //     {error && <Alert>{error}</Alert>}
+  //     {/* <List isLoading={isLoading}>{renderPollResult()}</List> */}
+  //   </>
+  // );
+// };
+
+// export default ListPolls;
